@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<script type="text/javascript">
+function drawShape(){
+    // get the canvas element using the DOM
+    var canvas = document.getElementById('mycanvas');
+    // Make sure we don't execute when canvas isn't supported
+    
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'red' 
+    ctx.fillRect(0,0,300,300); // draw a rectangle with default settings
+    ctx.save(); // Save the default state( State 1)
+    
+    // Make changes to the settings
+    ctx.fillStyle = 'blue' 
+    ctx.save(); // Save the changed state ( State 2)
+    // Make changes to the settings
+    ctx.translate(100,100);
+    ctx.moveTo(100,100);
+    ctx.rotate((2*Math.PI)/(120)); //Transformation
+    ctx.save(); // Save the changed state ( State3) 
+    
+    // Make the new changes to the settings
+    ctx.fillStyle = 'green' 
+    ctx.globalAlpha = 0.9; 
+    ctx.save(); // Save the changed state ( State 4)
+
+    var x=prompt("Enter the state position you want to work with","");
+    for(i=1;i<=x;i++){
+    ctx.restore();
+    } 
+    ctx.fillRect(45,45,100,100); 
+    }
+
+    </script>
+<body onload="drawShape()">
+<canvas id="mycanvas" width="500px" height="500px"></canvas>
+</body>
+    
+    
+    

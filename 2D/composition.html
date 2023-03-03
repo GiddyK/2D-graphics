@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+// An array of composite operation
+var compositeTypes = [
+ 'source-over','source-in','source-out','source-atop',
+ 'destination-over','destination-in','destination-out',
+ 'destination-atop','lighter','darker','copy','xor'
+];
+//A function to apply the operations
+function drawShape(){
+// A loop to iterate over the array of compositeTypes
+for (i=0;i<compositeTypes.length;i++){
+ var label = document.createTextNode(compositeTypes[i]);
+ document.getElementById('lab'+i).appendChild(label);
+ var ctx = document.getElementById('tut'+i).getContext('2d');
+ // draw rectangle
+ ctx.fillStyle = "#FFccbb";
+ ctx.fillRect(15,15,70,70);
+ // set composite property
+ ctx.globalCompositeOperation = compositeTypes[i];
+ // draw circle
+ ctx.fillStyle = "#0066FF";
+ ctx.beginPath();
+ ctx.arc(75,75,35,0,Math.PI*2,true);
+ ctx.fill();
+}}// End of function
+</script>
+</head>
+<body onload="drawShape();">
+<table border="1" align="center">
+<tr>
+<td><label id="lab0"></label><br><canvas id="tut0" width="125"
+height="125"></canvas> </td>
+<td><label id="lab1"></label><br><canvas id="tut1" width="125"
+height="125"></canvas> </td>
+<td><label id="lab2"></label><br><canvas id="tut2" width="125"
+height="125"></canvas> </td>
+</tr>
+<tr>
+<td><label id="lab3"></label><br><canvas id="tut3" width="125"
+height="125"></canvas></td>
+<td><label id="lab4"></label><br><canvas id="tut4" width="125"
+height="125"></canvas> </td>
+<td> <label id="lab5"></label><br><canvas id="tut5" width="125"
+    height="125"></canvas></td>
+</tr>
+<tr>
+<td><label id="lab6"></label><br><canvas id="tut6" width="125"
+height="125"></canvas></td>
+<td><label id="lab7"></label><br><canvas id="tut7" width="125"
+height="125"></canvas> </td>
+<td><label id="lab8"></label><br><canvas id="tut8" width="125"
+height="125"></canvas></tr>
+<tr>
+</td>
+<td> <label id="lab9"></label><br><canvas id="tut9" width="125"
+height="125"></canvas></td>
+<td><label id="lab10"></label><br><canvas id="tut10" width="125"
+height="125"></canvas></td>
+<td><label id="lab11"></label><br><canvas id="tut11" width="125"
+height="125"></canvas> </td>
+</tr>
+</table>
+</body>
+</html>

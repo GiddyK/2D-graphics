@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html> <head>
+ <style>
+ body { margin: 0px; padding: 0px; }
+ </style>
+ </head> <body>
+ <canvas id="myCanvas" width="578" height="200"></canvas>
+ <script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    // translate context to center of canvas
+    context.translate(canvas.width / 2, canvas.height / 2);
+    // flip context horizontally
+    context.scale(-1, 1);
+    context.font = '30pt Calibri';
+    context.textAlign = 'center';
+    context.fillStyle = 'blue';
+    context.fillText('Hello You have decided to flip me horizontaly!', 0, 0);
+    </script>
+    </body>
+    </html>

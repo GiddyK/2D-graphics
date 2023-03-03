@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html> <head>
+ <style>
+ body { margin: 0px; padding: 0px; }
+ </style>
+ </head> <body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+ <script>
+ var canvas = document.getElementById('myCanvas');
+ var context = canvas.getContext('2d');
+ var centerX = 0;
+ var centerY = 0;
+ var radius = 50;
+ // save state
+ context.save();
+ // translate context
+ context.translate(canvas.width / 2, canvas.height / 2);
+ // scale context horizontally
+ context.scale(4, 2);
+ // draw circle which will be stretched into an oval
+ context.beginPath();
+ context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+ // restore to original state
+ context.restore();
+ // apply styling
+ context.fillStyle = '#8ED6FF';
+ context.fill();
+ context.lineWidth = 5;
+ context.strokeStyle = 'black';
+ context.stroke();
+ </script>
+ </body>
+ </html>
+</script>
+</head>
+<body onload="drawShape();">
+ <canvas id="mycanvas" width='400' width='400'></canvas>
+</body>
+</html>
